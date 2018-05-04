@@ -1,17 +1,16 @@
-console.log('loaded appointments.jsx')
-
-// var Appointments = React.createClass({
-//   render: function() {
-//     return (
-//       <h1>CalReact</h1>
-//     )
-//   }
-// });
 
 class Appointments extends React.Component {
+
   render() {
-  return (
-    <h1>CalReact</h1>
-      )
-   }
+    return (
+      <div>
+        <AppointmentForm />
+        {this.props.appointments.map(function(appointment) {
+          return (
+            <Appointment appointment={appointment} />
+          )
+        })}
+      </div>
+    )
+  }
 }
